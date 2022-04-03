@@ -2,25 +2,8 @@ from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework import serializers
 from rest_framework import status
-from .serializers import CharBaseSerializer, UserDataCreateSerializer, UserDataSerializer
-from ..models import ER_Base_Model, ER_Char_status
-
-class CharViewSet(viewsets.ModelViewSet):
-	queryset = ER_Char_status.objects.filter().order_by("id")
-	serializer_class = CharBaseSerializer
-	# permission_classes = [permissions.IsAuthenticated]
-
-	def list(self, request, *args, **kwargs):
-		queryset = self.get_queryset().all()
-		if not queryset:
-			error_msg = "데이터가 없습니다~"
-			Resee_data = {
-				"status" :400,
-				"msg" : error_msg
-			}
-			return Response({"msg" : error_msg})
-		serializer = CharBaseSerializer(queryset, many=True)
-		return Response(serializer.data)
+from .serializers import UserDataCreateSerializer, UserDataSerializer
+from ..models import ER_Base_Model
 
 class UserDataViewSet(viewsets.ModelViewSet):
 	queryset = ER_Base_Model.objects.filter().order_by("id")

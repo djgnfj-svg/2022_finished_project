@@ -1,4 +1,7 @@
 
+from character import ER_char_name
+
+
 def get_Tier(rank_point):
 	Tier = "iron"
 	if rank_point < 1:
@@ -41,3 +44,6 @@ def get_ER_Tier(mmr:int):
 
 	Tier_LP = str(Tier) + " " + str(Tier_num) + " " + str(league_point)
 	return Tier_LP
+
+def get_ER_char_name(charcode:int):
+	return (ER_char_name[charcode])

@@ -2,25 +2,12 @@ from rest_framework import serializers
 
 from ..ER_API_utils import get_ER_api_data
 
-from ..models import ER_Base_Model, ER_Char_status
-
-class CharBaseSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = ER_Char_status
-		fields = ["charname", "char_winning_rate","char_Kills",\
-							"char_Hunts", "char_Assistants"]
-
-
-class UserstatuSeralizer(serializers.ModelSerializer):
-	class Meta:
-		model = ER_Base_Model
-		fields = ["most_pick", "winning_rate","averageKills","averageHunts","averageAssistants",
-							"soloTier","duoTier","squadTier","updated_at","created_at",]
+from ..models import ER_Base_Model
 
 class UserDataSerializer(serializers.ModelSerializer):
-	Userstatus = UserstatuSeralizer(read_only=True)
 	class Meta:
 		model = ER_Base_Model
+		# fields = ('__all__')
 		exclude = ("id",)
 
 #todo postman으로 실험하기
@@ -36,6 +23,7 @@ class UserDataCreateSerializer(serializers.Serializer):
 		instance.memo = data.get("memo", None)
 
 		get_ER_api_data(instance)
+
 		return instance
 #전체적인과정
 
