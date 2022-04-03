@@ -41,6 +41,8 @@ def get_secret(setting):
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_secret("SECRET_KEY")
+
+ER_API_KEY = get_secret("ER_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -56,7 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_api',
+    'Re_API',
     'rest_framework',
     'corsheaders',
 ]
@@ -156,3 +158,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# ER setting
+ER_API_Season = 9
