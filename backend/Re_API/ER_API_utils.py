@@ -6,11 +6,18 @@ from backend.settings import ER_API_KEY, ER_API_Season
 from .utils import get_ER_Tier, get_ER_char_name
 from .models import ER_Base_Model
 
+from rest_framework.response import Response
+from rest_framework import status
+
+from rest_framework import exceptions
+
 def get_ER_userNum(nickname):
 	headers = {"accept": "applications/json", "x-api-key": ER_API_KEY}
 	usernick_url = "https://open-api.bser.io/v1/user/nickname?query="+str(nickname)
 	res = requests.get(usernick_url, headers=headers).json()
-
+	if res['code'] == 404:
+		raise exceptions.ValidationError({"error_msg" : "유효하지 않은 유저명입니다."})
+		# raise Response({"msg" : "존재하지않는 유저명 입니다."},status=status.HTTP_400_BAD_REQUEST)
 	userNum = res["user"]["userNum"]
 	return userNum
 
