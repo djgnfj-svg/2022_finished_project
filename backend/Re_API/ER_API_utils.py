@@ -44,6 +44,7 @@ def get_ER_api_data(instance:ER_Base_Model):
 	instance.duoTier	= get_ER_Tier(int(user_stats["userStats"][ER_userStats_Duo]["mmr"]))
 	instance.squadTier= get_ER_Tier(int(user_stats["userStats"][ER_userStats_Squad]["mmr"]))
 
+	instance.winning_rate = int(user_stats["userStats"][ER_userStats_Squad]["averageRank"])
 	# 모스트픽이 있지만 모스픽은 솔로에 3가지 듀오에 3가지 스쿼드에 3가지 이렇게 9가지가 있다 그렇다면 어떻게 하는게 좋을까?
 	# 솔로의 3가지만 띄우는게 베스트 라고생각한다 일단 솔로 3가지를 띄우는 방향으로 가겠다.
 	temp = {}
@@ -60,10 +61,4 @@ def get_ER_api_data(instance:ER_Base_Model):
 	except IndexError:
 		pass
 	instance.most_pick = temp
-
-	
-	# 모스픽에 대한 정보
-	# print(user_stats["userStats"]["nickname"])
-	# instance.nickname = user_stats["userStats"]["nickname"]
-	# instance.winning_rate =
 

@@ -23,10 +23,11 @@ class UserDataCreateSerializer(serializers.Serializer):
 		instance.memo = data.get("memo", None)
 
 		get_ER_api_data(instance)
-
+		if commit:
+			try:
+				instance.save()
+			except Exception as e:
+				print(e)
+			else:
+				pass
 		return instance
-#전체적인과정
-
-# -> 클라이언트에서 유저네임을 입력한다.
-# -> 그데이터를 가지고 createsirializer에서 하나 생성한다 ()
-# -> 그데이터를 리턴해준다.

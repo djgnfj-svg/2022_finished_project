@@ -39,7 +39,7 @@ def get_ER_Tier(mmr:int):
 	rank = mmr // 400
 
 	Tier = get_Tier(rank)
-	Tier_num = get_Tier_Num(rank)
+	Tier_num = get_Tier_Num(mmr % 400)
 	league_point = (rank % 100) + 1
 
 	Tier_LP = str(Tier) + " " + str(Tier_num) + " " + str(league_point)

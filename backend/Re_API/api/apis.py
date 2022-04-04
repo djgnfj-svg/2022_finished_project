@@ -17,28 +17,18 @@ class UserDataViewSet(viewsets.ModelViewSet):
 			if rtn:
 				return Response(UserDataSerializer(rtn).data, status=status.HTTP_201_CREATED)
 		#is_valid 하지 않으면
-		else:
-			Resee_data = {
-				"status" :400,
-				"msg" : "test"
-			}
-
-		return Response(Resee_data)
+		return Response({"msg" : "test"},status=status.HTTP_400_BAD_REQUEST)
 
 	def list(self, request, *args, **kwargs):
 		queryset = self.get_queryset().all()
 		if not queryset:
 			error_msg = "데이터가 없습니다~"
-			Resee_data = {
-				"status" :400,
-				"msg" : error_msg
-			}
-			return Response({"msg" : error_msg})
+			return Response({"msg" : error_msg}, status=status.HTTP_400_BAD_REQUEST)
 		serializer = UserDataSerializer(queryset, many=True)
 		return Response(serializer.data)
 
-#전체적인과정
+	def update(self, request, *args, **kwargs):
+		return super().update(request, *args, **kwargs)
 
-# -> 클라이언트에서 유저네임을 입력한다.
-# -> 그데이터를 가지고 createsirializer에서 하나 생성한다 ()
-# -> 그데이터를 리턴해준다.
+	def destroy(self, request, *args, **kwargs):
+		return super().destroy(request, *args, **kwargs)
