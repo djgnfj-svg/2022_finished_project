@@ -1,25 +1,7 @@
-
-from character import ER_char_name
-
+from character import ER_char_name, ER_Tier
 
 def get_Tier(rank_point):
-	Tier = "iron"
-	if rank_point < 1:
-		pass
-	elif rank_point == 1:
-		Tier = "Bronze"
-	elif rank_point == 2:
-		Tier = "Silver"
-	elif rank_point == 3:
-		Tier = "Gold"
-	elif rank_point == 4:
-		Tier = "Platinum"
-	elif rank_point == 5:
-		Tier = "Diamond"
-	elif rank_point == 6:
-		Tier = "Demigod"
-	elif rank_point == 7:
-		Tier = "Eternity"
+	Tier = ER_Tier[rank_point]
 	return Tier
 
 def get_Tier_Num(rank_point):
@@ -33,6 +15,9 @@ def get_Tier_Num(rank_point):
 	else:
 		return 1
 
+def get_ER_char_name(charcode:int):
+	return (ER_char_name[charcode])
+
 def get_ER_Tier(mmr:int):
 	#if 예외사항
 	# todo 승격전일떄는? 0포인트일 때는?
@@ -44,6 +29,3 @@ def get_ER_Tier(mmr:int):
 
 	Tier_LP = str(Tier) + " " + str(Tier_num) + " " + str(league_point)
 	return Tier_LP
-
-def get_ER_char_name(charcode:int):
-	return (ER_char_name[charcode])

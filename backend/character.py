@@ -52,4 +52,15 @@ ER_char_name = {
 	50 : "엘레나",
 	51 : "프리야",
 	52 : "아디나",
+},
+
+ER_Tier = {
+	0 : "iron",
+	1 : "Bronze",
+	2 : "Silver",
+	3 : "Gold",
+	4 : "Platinum",
+	5 : "Diamond",
+	6 : "Demigod",
+	7 : "Eternity",
 }

@@ -3,21 +3,18 @@ import requests
 from time import sleep
 from backend.settings import ER_API_KEY, ER_API_Season
 
-from .utils import get_ER_Tier, get_ER_char_name
-from .models import ER_Base_Model
-
-from rest_framework.response import Response
-from rest_framework import status
-
 from rest_framework import exceptions
+
+from .ER_utils import get_ER_Tier, get_ER_char_name
+from .models import ER_Base_Model
+from .error_utils import ER_error_msg
 
 def get_ER_userNum(nickname):
 	headers = {"accept": "applications/json", "x-api-key": ER_API_KEY}
 	usernick_url = "https://open-api.bser.io/v1/user/nickname?query="+str(nickname)
 	res = requests.get(usernick_url, headers=headers).json()
 	if res['code'] == 404:
-		raise exceptions.ValidationError({"error_msg" : "유효하지 않은 유저명입니다."})
-		# raise Response({"msg" : "존재하지않는 유저명 입니다."},status=status.HTTP_400_BAD_REQUEST)
+		raise exceptions.ValidationError(ER_error_msg(2), code=400)
 	userNum = res["user"]["userNum"]
 	return userNum
 
@@ -27,7 +24,7 @@ def get_ER_userstatus(userNum):
 	res = requests.get(user_status, headers=headers).json()
 	return res
 
-def get_ER_api_data(instance:ER_Base_Model):
+def set_ER_api_data(instance:ER_Base_Model):
 	ER_userStats_Solo = 0
 	ER_userStats_Duo = 1
 	ER_userStats_Squad = 2
@@ -39,8 +36,7 @@ def get_ER_api_data(instance:ER_Base_Model):
 	userNum = get_ER_userNum(instance.nickname)
 	sleep(1)
 	user_stats = get_ER_userstatus(userNum)
-	instance.nickname = user_stats["userStats"][ER_userStats_Solo]["nickname"]
-	
+
 	#평균 K A H
 	instance.averageKills = user_stats["userStats"][ER_userStats_Solo]["averageKills"]
 	instance.averageAssistants = user_stats["userStats"][ER_userStats_Solo]["averageAssistants"]
