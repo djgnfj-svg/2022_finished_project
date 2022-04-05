@@ -158,5 +158,24 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# REST_FRAMEWORK
+# The rate descriptions used in DEFAULT_THROTTLE_RATES 
+# may include second, minute, hour, or day as the throttle period.
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '50/hour',
+        'user': '50/day'
+    }
+}
+
 # ER setting
+
+
+
 ER_API_Season = 9
+

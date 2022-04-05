@@ -5,8 +5,8 @@ from rest_framework import viewsets, status, exceptions
 
 from ..error_utils import ER_error_msg
 
-from .serializers import UserDataCreateSerializer, UserDataSerializer
-from ..models import ER_Base_Model
+from .serializers import Trolls_Data_CreateSerializer, Trolls_DataSerializer, UserDataCreateSerializer, UserDataSerializer
+from ..models import ER_Base_Model, ER_Trolls_Models
 
 class UserDataViewSet(viewsets.ModelViewSet):
 	queryset = ER_Base_Model.objects.filter().order_by("id")
@@ -21,7 +21,7 @@ class UserDataViewSet(viewsets.ModelViewSet):
 			if rtn:
 				return Response(UserDataSerializer(rtn).data, status=status.HTTP_201_CREATED)
 		else :
-			return Response({"msg" : "test"},status=status.HTTP_400_BAD_REQUEST)
+			return Response({"msg" : "입력이 올바르지않습니다."},status=status.HTTP_400_BAD_REQUEST)
 
 	#GET
 	def list(self, request, *args, **kwargs):
@@ -50,4 +50,17 @@ class UserDataViewSet(viewsets.ModelViewSet):
 			raise exceptions.ValidationError(ER_error_msg(3),code=400)
 		queryset.delete()
 		return Response({"msg": "ok"})
-	
+
+
+class TrollsDataViewSet(viewsets.ModelViewSet):
+	queryset = ER_Trolls_Models.objects.order_by("id")
+	serializer_class = Trolls_DataSerializer
+
+	def create(self, request):
+		serializer = Trolls_Data_CreateSerializer(data=request.data)
+		if serializer.is_valid():
+			rtn = serializer.create(request, serializer.data)
+			if rtn:
+				return Response(Trolls_DataSerializer(rtn).data, status=status.HTTP_201_CREATED)
+		else :
+			return Response({"msg" : "입력이 올바르지않습니다."},status=status.HTTP_400_BAD_REQUEST)
