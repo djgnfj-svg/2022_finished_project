@@ -59,7 +59,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Re_API',
+
     'rest_framework',
+    'drf_yasg',
+    
+    # react 협업용
     'corsheaders',
 ]
 

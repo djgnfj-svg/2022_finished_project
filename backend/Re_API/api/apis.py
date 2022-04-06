@@ -9,7 +9,7 @@ from .serializers import Trolls_Data_CreateSerializer, Trolls_DataSerializer, Us
 from ..models import ER_Base_Model, ER_Trolls_Models
 
 class UserDataViewSet(viewsets.ModelViewSet):
-	queryset = ER_Base_Model.objects.filter().order_by("id")
+	queryset = ER_Base_Model.objects.filter().order_by("-id")
 	serializer_class = UserDataSerializer
 	# permission_classes = [permissions.IsAuthenticated]
 
@@ -25,7 +25,7 @@ class UserDataViewSet(viewsets.ModelViewSet):
 
 	#GET
 	def list(self, request, *args, **kwargs):
-		queryset = self.get_queryset().all()
+		queryset = self.get_queryset()[:20]
 		if not queryset:
 			error_msg = "데이터가 없습니다~"
 			return Response({"msg" : error_msg}, status=status.HTTP_400_BAD_REQUEST)
