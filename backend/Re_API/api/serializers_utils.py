@@ -1,7 +1,7 @@
 
 
-from ..models import ER_Base_Model
+from ..models import ER_Trolls_Models
 
 
 def check_troller(nickname):
-	return (ER_Base_Model.objects.filter(nickname=nickname).first().trolls_ven)
+	return (ER_Trolls_Models.objects.filter(nickname=nickname).first().trolls_ven)
