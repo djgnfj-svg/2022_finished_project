@@ -1,7 +1,7 @@
 import requests
 
 from time import sleep
-from backend.settings import ER_API_KEY, ER_API_Season
+from backend.settings import ER_API_KEY, ER_API_SEASON
 
 from rest_framework import exceptions
 
@@ -20,7 +20,7 @@ def get_ER_userNum(nickname):
 
 def get_ER_userstatus(userNum):
 	headers = {"accept": "applications/json", "x-api-key": ER_API_KEY}
-	user_status = "https://open-api.bser.io/v1/user/stats/"+str(userNum)+'/'+str(ER_API_Season)
+	user_status = "https://open-api.bser.io/v1/user/stats/"+str(userNum)+'/'+str(ER_API_SEASON)
 	res = requests.get(user_status, headers=headers).json()
 	return res
 

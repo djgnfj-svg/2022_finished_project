@@ -179,7 +179,5 @@ REST_FRAMEWORK = {
 
 # ER setting
 
-
-
-ER_API_Season = 9
+ER_API_SEASON = 9
 

@@ -39,7 +39,7 @@ class UserDataCreateSerializer(serializers.Serializer):
 		
 		instance.nickname = data.get("nickname", None)
 		if check_troller(instance.nickname):
-			exceptions.ValidationError(ER_error_msg(4),code=400)
+			raise exceptions.ValidationError(ER_error_msg(4),code=400)
 		instance.remove_password = data.get("remove_password", None)
 		instance.memo = data.get("memo", None)
 
