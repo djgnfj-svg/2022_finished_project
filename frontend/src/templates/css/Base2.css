@@ -1,12 +1,28 @@
 
-
+.all_con{
+    display: inline-block;
+    text-align: center;
+    width: 900px;
+    margin-top: 20px;
+}
 .contain2{
     position: relative;
     height: 100%;
 }
-.add_user{
+
+.addUser{
+    width: 100%;
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+.addUser button{
+    padding: 10px 20px 10px 20px;
+    font-size: 13px;
+    background-color: #00c0a4;
+    border: none;
+    border-radius: .3rem;
+    color: white;
 }
 
 
@@ -85,6 +101,7 @@ ul{
     border-bottom: 1px solid black;
     margin-top: 10px;
 }
+
 
 
 

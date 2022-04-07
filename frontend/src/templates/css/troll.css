@@ -1,0 +1,214 @@
+.box{
+    width: 30px;
+    height: 500px;
+    text-align: center;
+    float: right;
+    position: relative;
+
+}
+
+.add_user{
+    margin-bottom: 20px;
+}
+
+.addTroll{
+    display: inline-block;
+    position: relative;
+    margin-top: 30px;
+    position: relative;
+    text-align: left;
+    width: 900px;
+    background-color: #282830;
+    border-radius: .3rem;
+}
+
+.addTroll .title{
+    float: left;
+    text-align: left;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid black;
+    padding: 0px 0px 0px 0px;
+}
+
+.addTroll .title p{
+    margin-left: 20px;
+}
+
+.addTroll .report_content{
+    display: block;
+    float: left;
+    padding: 15px 15px 15px 15px;
+}
+.addTroll .report_content input{
+    float: left;
+    width: 830px;
+    height: 30px;
+    border-radius: .3rem;
+    background-color: #31313c;
+    margin-bottom: 10px;
+    color: white;
+    border: 1px #4c4c5d solid;
+    padding: 2px 10px 2px 10px;
+}
+
+.addTroll .report_content .input_report{
+    height: 60px;
+}
+
+.addTroll .report_content button{
+    position: relative;
+    padding: 10px 20px 10px 20px;
+    float: right;
+    margin-top: 30px;
+    background-color: #e84075;
+    color: white;
+    border-radius: 0.3rem;
+    border:1px none;
+}
+
+input:focus{
+    outline: none;
+}
+
+ul li{
+    color: white;
+}
+
+.contain2{
+    position: relative;
+    height: 100%;
+}
+
+
+.Duo_topbar{
+    position: relative;
+    width: 900px;
+    height: 27.5px;
+    color: #7b7a8b;
+    background-color: #282830;
+    font-size: small;
+    padding-top: 5px;
+    padding-bottom: 2.5px;
+    border-top-left-radius:0.3rem ;
+    border-top-right-radius: 0.3rem;
+}
+.Duo_topbar div{
+    padding : 0px 10px 0px 10px;
+    float: left;
+    width: 100px;
+}
+
+.Duo_userInfo{
+    position: relative;
+    width: 900px;
+    height: 40px;
+    background-color: #31313c;
+    text-align: center;
+    margin-bottom: 0;
+    border-bottom: black 1.5px solid;
+    margin-left: 0px;
+}
+ul{
+    padding : 0 0 0 0;
+    margin : 0 0 0 0;
+}
+.contain2{
+    display: inline-block;
+    text-align: center;    
+}
+
+
+.Duo_userInfo div{
+    width: 100px;
+    font-size: 15px;
+    font-weight: 100;
+    padding : 10px 10px 10px 10px;
+    color:white;
+    float: left;
+
+}
+/* 메뉴별 개인 박스 크기 정하기 */
+
+.Duo_topbar .Name{
+    text-align: left;
+}
+.Name {
+    text-align: left;
+}
+
+.Duo_topbar div{
+    width: 100px;
+}
+
+.menu_option{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:60px;
+    left: 45vw;
+    background-color: pink;
+}
+
+.menu_option div{
+    width: 100px;
+    height: 30px;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+}
+
+.tier[dataToolTip]:hover::after{
+    content:attr(dataToolTip);
+    position: absolute;
+    top: 75%;
+    left: 20%;
+    width:75px;
+    line-height:30px;
+    background:#31313c;
+    font-size:10px;
+    border:1px solid black;
+    color:white;
+    text-align:center;
+    z-index:100;
+    }
+
+
+
+.winningRate[dataToolTip]:hover::after{
+    content:attr(dataToolTip);
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    width:75px;
+    line-height:30px;
+    background:#31313c;
+    font-size:13px;
+    border:1px solid black;
+    color:white;
+    text-align:center;
+    z-index:100;
+    }
+
+
+/* @keyframes slidein {
+    from {
+      left:12.5vw
+    }
+  
+    to {
+     left:0vw;
+   }
+}
+
+@media (max-width: 700px)
+{
+   .Duo_topbar,.Duo_userInfo{
+       animation-duration: 0.1s;
+       animation-name: slidein;
+       animation-iteration-count: 1;
+       left: 0vw;
+   }
+} */
