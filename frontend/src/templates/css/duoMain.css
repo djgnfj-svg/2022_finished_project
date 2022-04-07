@@ -1,13 +1,9 @@
 
-.all_con{
+.mainDuo{
     display: inline-block;
     text-align: center;
     width: 900px;
-    margin-top: 20px;
-}
-.contain2{
-    position: relative;
-    height: 100%;
+    margin-top: 150px;
 }
 
 .addUser{
@@ -47,7 +43,7 @@
 .Duo_userInfo{
     position: relative;
     width: 900px;
-    height: 40px;
+    padding:2px 0px 2px 0px;
     background-color: #31313c;
     text-align: center;
     margin-bottom: 0;
@@ -64,11 +60,12 @@ ul{
 }
 
 
+
 .Duo_userInfo div{
     width: 100px;
     font-size: 15px;
     font-weight: 100;
-    padding : 10px 10px 10px 10px;
+    padding : 20px 10px 20px 10px;
     color:white;
     float: left;
 
@@ -90,8 +87,8 @@ ul{
     position: absolute;
     display: flex;
     flex-direction: column;
-    top:60px;
-    left: 45vw;
+    top:2vw;
+    left: 0vw;
     background-color: pink;
 }
 

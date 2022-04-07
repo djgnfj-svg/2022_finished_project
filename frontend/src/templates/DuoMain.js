@@ -1,8 +1,7 @@
 import React from 'react'
-import './css/Base2.css'
+import './css/duoMain.css'
 import Modal from './Modal.js';
 import axios from 'axios';
-import Dropdown from './Dropdown.js'
 
 class DuoMain extends React.Component {
 
@@ -11,26 +10,24 @@ class DuoMain extends React.Component {
         this.state = {
             modalOpen: false,
             userInfo: [],
-            name: "",
+            name: "", 
             memo: "",
             _password: "",
             _data: [],
             showMenu: false,
             trolls_ven:true,
         }
-
     }
     //페이지 로드시 
     componentDidMount() {
         this.loadItem();
-        console.log("로드")
     }
 
     //this.state 값이 변경될 시 * 무한루프가 발생함으로 if문 변경전값 !== 변경값 해줘야함
-    componentDidUpdate() {
-        if (this.state.name !== "") {
+    componentDidUpdate(prevProps) {
+        if (this.state.name !== prevProps.name) {
             this.postData();
-            console.log(" component didmount ")
+            console.log(" component update ")
         }
     }
 
@@ -47,6 +44,7 @@ class DuoMain extends React.Component {
         console.log("서브밋");
     }
 
+    
 
     handleCreate = (data) => {
         const { userInfo } = this.state;
@@ -60,7 +58,7 @@ class DuoMain extends React.Component {
             _password: data.userPassword,
 
         })
-        this.postData()
+        console.log(this.state.name,"네임입니다")
     }
 
     postData = async () => {
@@ -69,13 +67,11 @@ class DuoMain extends React.Component {
             const response = await axios.post(
                 'http://127.0.0.1:8000/api/Userdata/',
                 {
-                    nickname: "흥부릉",
-                    memo: "김밥",
-                    remove_password: "1234",
-                    
+                    nickname: this.state.name,
+                    memo: this.state.memo,
+                    remove_password:this.state._password,
                 });
             console.log(response)
-            console.log("포스트 성공")
             this.setState({
                 _data: _data.concat({
                     ...response
@@ -90,7 +86,7 @@ class DuoMain extends React.Component {
             .get("http://127.0.0.1:8000/api/Userdata/")
             .then(({ data }) => {
                 this.setState({
-                    _data: data.userlist
+                    _data: data
                 });
                 console.log(data)
             })
@@ -127,12 +123,12 @@ class DuoMain extends React.Component {
 
         const add_user = (
             <React.Fragment>
-                
                 <Modal open={this.state.modalOpen}
                     close={this.closeModal}
-                    header="Input UserName"
+                    header="유저 등록"
                     submit={this.handleSubmit}
-                    onSave={this.handleCreate}>
+                    onSave={this.handleCreate}
+                    >
                 </Modal>
             </React.Fragment>
         )
@@ -158,19 +154,19 @@ class DuoMain extends React.Component {
             </div>
         )
 
-        const duo_list = _data.map(
+        const duo_list = _data && _data.map(
             (item, index) => (
-                <>
+                <>  
                     {console.log(item.id)}
                     <div key={item.id} className='Duo_userInfo'>
                         <div key={item.nickname}>{item.nickname}</div>
-                        <div key={item.soloTier}>{item.soloTier}</div>
+                        <div key={item.soloTier} className='tier' dataToolTip={item.soloTier} >{item.soloTier}</div>
                         <div key={item.memo}>{item.memo}</div>
                         <div key={item.averageKills}>{item.averageKills}</div>
                         <div key={item.remove_password}>{item.memo}</div>
-                        <div key={item.most_pick}>{item.winning_rate}</div>
+                        <div key={item.most_pick} className='winningRate' dataToolTip={"메모 정보임"} >{item.winning_rate}</div>
                         <div key={index}>
-                            <button onClick={this.showMenu}>
+                            <button className={index} onClick={this.showMenu}>
                                 Show menu
                             </button>
                         </div>
@@ -182,7 +178,7 @@ class DuoMain extends React.Component {
 
         return (
             <>
-            <div className='all_con'>
+            <div className='mainDuo'>
                 <div className='addUser'>
                     <button type="button" onClick={this.openModal}>사용자 등록하기</button>
                 </div>
@@ -193,6 +189,7 @@ class DuoMain extends React.Component {
                         <ul>
                             {duo_list}
                         </ul>
+
                         {this.state.showMenu ? (
                             <>
                                 {lie}
@@ -202,7 +199,7 @@ class DuoMain extends React.Component {
                     }
                     </div>
                 </div>
-                    </div>
+            </div>
             </>
         )
     }

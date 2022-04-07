@@ -3,8 +3,7 @@ import './css/troll.css'
 import Modal from './Modal.js';
 import axios from 'axios';
 
-class Troll_Main extends React.Component {
-
+class TrollMain extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -215,4 +214,4 @@ class Troll_Main extends React.Component {
     }
 }
 
-export default Troll_Main
+export default TrollMain

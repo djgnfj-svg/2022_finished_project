@@ -2,9 +2,19 @@ body{
     margin:0 0 0 0;
     padding:0 0 0 0 ;
 }
-nav  {
+
+.allData{
+    position:fixed;
+    width: 100%;
+    top:0px;
+    left: 0px;
+    z-index:1;
+}
+nav {
     color: white;
     background-color: #282c34;
+    position: relative;
+   
 }
 
 .logo  {

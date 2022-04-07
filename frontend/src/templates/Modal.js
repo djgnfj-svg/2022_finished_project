@@ -53,11 +53,12 @@ export class Modal extends Component {
             <form onSubmit={this.handleSubmit}>
               <main>
                 <div>소환사 이름</div>
-                <input className='userName' name='userName' value={this.state.userName} onChange={this.handleChange} placeholder="Input Name" />
+                <input className='userName' name='userName' value={this.state.userName} onChange={this.handleChange} placeholder="사용자 명" />
                 <div>메모</div>
-                <input className='memo' name='userMemo' value={this.state.userMemo} onChange={this.handleChange} placeholder="Input memo" />
+                <textarea className='memo' name='userMemo' value={this.state.userMemo} onChange={this.handleChange} placeholder="메모를 입력해주세요" />
+                <textarea className='select_mode' placeholder='셀렉트 박스 추가 예정' />
                 <div>패스워드</div>
-                <input className='removePasword' maxLength='4' name='userPassword' value={this.state.userPassword} onChange={this.handleChange} placeholder="Input memo" />
+                <input className='removePasword' maxLength='4' name='userPassword' value={this.state.userPassword} onChange={this.handleChange} placeholder="비밀번호" />
               </main>
               <footer>
                 <button type="submit" className="close">

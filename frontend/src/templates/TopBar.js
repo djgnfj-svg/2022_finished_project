@@ -5,8 +5,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import Duo_Main from './Duo_Main.js'
-import Troll_Main from './Troll_Main.js'
+import DuoMain from './DuoMain.js'
+import TrollMain from './TrollMain.js'
 import './css/TopBar.css'
 
 
@@ -28,15 +28,15 @@ class TopBar extends React.Component {
     }
 
     render() {
-
         return (
             <>
-                <Router>
-                    <div className='contain'>
+                    <Router>
+
+                        <div className='allData'>
                         <nav>
                             <header className="logo" >
                                 <div className='container'>
-                                    <img src="https://duo.op.gg/duo.svg" />
+                                    <img alt='mainLogo' src="https://duo.op.gg/duo.svg" />
                                     <span className='sub_title'> 지겹다 이제 코딩하자 !</span>
                                 </div>
                             </header>
@@ -54,14 +54,14 @@ class TopBar extends React.Component {
                                 </ul>
                             </div>
                         </nav>
+                        </div>
                         <div>
                             <Routes>
-                                <Route path="" exact={true}  element={<Duo_Main />} />
-                                <Route path="/troll_box" element={<Troll_Main />} />
+                                <Route path="" exact={true} element={<DuoMain />} />
+                                <Route path="/troll_box" element={<TrollMain />} />
                             </Routes>
                         </div>
-                    </div>
-                </Router>
+                    </Router>
             </>
         )
     }
