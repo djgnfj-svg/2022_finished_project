@@ -1,10 +1,9 @@
 import React from 'react'
-import './css/Base2.css'
+import './css/troll.css'
 import Modal from './Modal.js';
 import axios from 'axios';
-import Dropdown from './Dropdown.js'
 
-class Base extends React.Component {
+class Troll_Main extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,6 +15,8 @@ class Base extends React.Component {
             _password: "",
             _data: [],
             showMenu: false,
+            trolls_ven: true,
+            title: "타이틀임"
         }
 
     }
@@ -29,7 +30,7 @@ class Base extends React.Component {
     componentDidUpdate() {
         if (this.state.name !== "") {
             this.postData();
-            console.log(" component didmount ")
+            console.log("component didmount ")
         }
     }
 
@@ -40,11 +41,6 @@ class Base extends React.Component {
         this.setState({ modalOpen: false })
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        this.setState({ modalOpen: false })
-        console.log("서브밋");
-    }
 
 
     handleCreate = (data) => {
@@ -59,7 +55,7 @@ class Base extends React.Component {
             _password: data.userPassword,
 
         })
-        console.log("성공")
+        this.postData()
     }
 
     postData = async () => {
@@ -68,27 +64,29 @@ class Base extends React.Component {
             const response = await axios.post(
                 'http://127.0.0.1:8000/api/Userdata/',
                 {
-                    nickname: this.state.name,
-                    memo: this.state.memo,
-                    remove_password: this.state._password,
+                    nickname: "흥부릉",
+                    memo: "김밥",
+                    remove_password: "1234",
+                    trolls_ven: ""
                 });
             console.log(response)
+            console.log("포스트 성공")
             this.setState({
                 _data: _data.concat({
                     ...response
                 }),
-                name: ""
             })
         } catch (error) {
             console.error(error);
         }
     }
+
     loadItem = async () => {
         axios
             .get("http://127.0.0.1:8000/api/Userdata/")
             .then(({ data }) => {
                 this.setState({
-                    _data: data
+                    _data: data.userlist
                 });
                 console.log(data)
             })
@@ -99,6 +97,7 @@ class Base extends React.Component {
                 });
             });
     }
+
     showMenu = (event) => {
         event.preventDefault();
         console.log(event.target.value)
@@ -124,15 +123,31 @@ class Base extends React.Component {
         const { _data } = this.state
 
         const add_user = (
-            <React.Fragment>
-                <button type="button" onClick={this.openModal}>모달팝업</button>
-                <Modal open={this.state.modalOpen}
-                    close={this.closeModal}
-                    header="Input UserName"
-                    submit={this.handleSubmit}
-                    onSave={this.handleCreate}>
-                </Modal>
-            </React.Fragment>
+            <>
+            <div className='addTroll'>
+                <header className='title'>
+                    <p>트롤 등록하기</p>
+                </header>
+                <form>
+                    <div className='report_content'>
+                        <div>
+                            <input className='input_userName' name='userName' placeholder='사용자 이름' />
+                            <input className='input_report' placeholder='사용자를 신고하는 이유를 알려주세요' />
+                        </div>
+                        <div>
+                            <ul>
+                                <li>이것저것</li>
+                                <li>이것저것</li>
+                                <li>이것저것</li>
+                                <li>이것저것</li>
+                                </ul>
+                            
+                        </div>
+                        <button type='submit'>트롤 등록하기</button>
+                    </div>
+                </form>
+            </div>
+            </>
         )
 
         const title = (
@@ -140,9 +155,9 @@ class Base extends React.Component {
                 <div className='Duo_topbar'>
                     <div className='Name'>인게임 닉네임</div>
                     <div className='Subject'>서브젝트</div>
-                    <div className='Most_Char'>모스트 캐릭터</div>
-                    <div className='Top_Rank'>평균 순위</div>
+                    <div className='Most_Char'>신고 횟수</div>
                     <div className='Memo'>메모</div>
+                    <div className='Top_Rank'>트롤 태그</div>
                     <div className='add_Date'>등록 일시</div>
                 </div>
             </>
@@ -156,26 +171,23 @@ class Base extends React.Component {
             </div>
         )
 
-        const duo_list = _data.map(
-            (item, index) => (
-                <>
-                    {console.log(item.id)}
-                    <div key={item.id} className='Duo_userInfo'>
-                        <div key={item.nickname}>{item.nickname}</div>
-                        <div key={item.soloTier}>{item.soloTier}</div>
-                        <div key={item.memo}>{item.memo}</div>
-                        <div key={item.averageKills}>{item.averageKills}</div>
-                        <div key={item.remove_password}>{item.memo}</div>
-                        <div key={item.most_pick}>{item.winning_rate}</div>
-                        <div key={index}>
-                            <button onClick={this.showMenu}>
-                                Show menu
-                            </button>
-                        </div>
-                    </div>
-                </>
 
-            )
+        const duo_list = (
+            <>
+                <div className='Duo_userInfo'>
+                    <div>김밥님</div>
+                    <div className='tier' dataToolTip='챌린저'>Challange</div>
+                    <div>1회</div>
+                    <div className='winningRate' dataToolTip={"메모 정보임"}>대리임 개잘함</div>
+                    <div>김대리</div>
+                    <div>1분전</div>
+                    <div>
+                        <button onClick={this.showMenu}>
+                            Show menu
+                        </button>
+                    </div>
+                </div>
+            </>
         )
 
         return (
@@ -203,4 +215,4 @@ class Base extends React.Component {
     }
 }
 
-export default Base
+export default Troll_Main

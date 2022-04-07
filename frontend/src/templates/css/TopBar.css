@@ -7,12 +7,13 @@ nav  {
     background-color: #282c34;
 }
 
-.title  {
+.logo  {
     height: 25px;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
     margin : 0 auto;
+    
 }
 .container{
     position: relative;
@@ -41,24 +42,10 @@ ul li  {
     margin-right: 15px;
 }
 
-@keyframes slidein {
-    from {
-      left:12.5vw
-    }
-  
-    to {
-     left:0vw;
-   }
-}
-
-@keyframes slideout {
-    from {
-      left:0vw
-    }
-  
-    to {
-     left:12.5vw;
-   }
+a{
+    color: white;
+    text-decoration: none;
+    
 }
 
 /* @media (max-width: 700px)

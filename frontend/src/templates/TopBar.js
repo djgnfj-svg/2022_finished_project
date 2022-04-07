@@ -5,7 +5,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import Base from './Base.js'
+import Duo_Main from './Duo_Main.js'
+import Troll_Main from './Troll_Main.js'
 import './css/TopBar.css'
 
 
@@ -29,33 +30,38 @@ class TopBar extends React.Component {
     render() {
 
         return (
-            <>  
-            <div className='contain'>
-                <nav>
-                    <header className="title" >
-                        <div className='container'>
-                            <img src="https://duo.op.gg/duo.svg" />
-                            <span className='sub_title'> 지겹다 이제 코딩하자 !</span>
+            <>
+                <Router>
+                    <div className='contain'>
+                        <nav>
+                            <header className="logo" >
+                                <div className='container'>
+                                    <img src="https://duo.op.gg/duo.svg" />
+                                    <span className='sub_title'> 지겹다 이제 코딩하자 !</span>
+                                </div>
+                            </header>
+                            <div className='container'>
+                                <ul className='menu'>
+                                    <li>
+                                        <Link to="/">듀오찾기</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/troll_box">트롤신고</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/find_gud">길드찾기</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div>
+                            <Routes>
+                                <Route path="" exact={true}  element={<Duo_Main />} />
+                                <Route path="/troll_box" element={<Troll_Main />} />
+                            </Routes>
                         </div>
-                    </header>
-                    <div className='container'>
-                        <ul className='menu'>
-                            <li>
-                                듀오찾기
-                            </li>
-                            <li>
-                                트롤신고
-                            </li>
-                            <li>
-                                클랜 찾기
-                            </li>
-                        </ul>
                     </div>
-                </nav>
-                <div>
-                    <Base />
-                </div>
-            </div>
+                </Router>
             </>
         )
     }
