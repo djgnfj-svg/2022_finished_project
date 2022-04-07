@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-secret_file = os.path.join(BASE_DIR,'..', '.secrets.json')  # secrets.json 파일 위치를 명시
+secret_file = os.path.join(BASE_DIR, '.secrets.json')  # secrets.json 파일 위치를 명시
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
@@ -44,9 +44,14 @@ SECRET_KEY = get_secret("SECRET_KEY")
 
 ER_API_KEY = get_secret("ER_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+# ENV = os.environ.get("DJANGO_ENV", "dev")
+# if ENV == "dev":
+DEBUG = True
+# else:
+#     DEBUG = False
+
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -85,13 +90,16 @@ CORS_ORIGIN_WHITELIST = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+# CORS_ORIGIN_WHITELIST =os.environ.get("CORS_ORIGIN_WHITELIST").split(" ")
+
+
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, '..', 'frontend', 'build')
+            os.path.join(BASE_DIR, "..", 'frontend', 'build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -105,7 +113,7 @@ TEMPLATES = [
     },
 ]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '..', 'frontend', 'build', 'static'),
+    os.path.join(BASE_DIR, "..", 'frontend', 'build', 'static'),
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
