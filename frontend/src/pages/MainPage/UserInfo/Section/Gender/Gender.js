@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import './Gender.css'
-function Gender() {
+function Gender({check}) {
 
   const [isMan , setIsMan] = useState(true)
 
   //남성을 클릭한다면 ?
   const handleClickMan = () => {
     setIsMan(true)
+    check('M')
   }
   //여성을 클릭한다면 ? 
   const handleClickWoman = () => {
     setIsMan(false)
+    check('W')
   }
+  
 
   return (
     <div className='info_Gender'>

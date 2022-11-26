@@ -11,18 +11,7 @@ function UserInfo() {
       <div className='기본 정보'>
         <Infobase />
       </div>
-      <div className='성별'>
-        <Gender />
-      </div>
-      <div className='운동' style={{ display: "flex", flexDirection: "row" }}>
-        <Running />
-      </div>
-      <div className='식사횟수'>
-        <Sicksa />
-      </div>
-      <div className='info_Submit'>
-        <button>확인하기</button>
-      </div>
+      
     </div>
   )
 }
