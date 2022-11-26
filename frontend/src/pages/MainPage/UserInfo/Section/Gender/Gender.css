@@ -1,0 +1,16 @@
+.info_Gender{
+    width: 100%;
+}
+.select_Gender button{
+    width: 75px;
+    height: 25px;
+    border: none;
+}
+.select_Gender{
+    border: 1px solid none;
+    width: max-content;
+    margin: 0 auto;
+}
+.selected_Gender{
+    background-color: skyblue;
+}

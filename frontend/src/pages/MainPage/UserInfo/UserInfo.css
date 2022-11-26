@@ -1,0 +1,11 @@
+.userInfo{
+    width: 100%;
+}
+.userInfo > .info_Submit{
+    margin-left: 370px;
+    margin-top: 30px;
+}
+.userInfo > .info_Submit > button{
+    width: 90px;
+    height: 28px;
+}

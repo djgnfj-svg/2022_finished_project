@@ -1,0 +1,8 @@
+.info_Running{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.info_Running > div{
+    width: 100px;
+}

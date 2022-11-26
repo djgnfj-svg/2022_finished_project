@@ -1,0 +1,29 @@
+.info_base {
+    text-align: right;
+    margin-top: 100px;
+}
+
+.info_base > div {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: max-content;
+    margin-bottom: 10px;
+
+}
+
+.info_base > div > input {
+    margin-right: 5px;
+    margin-left: 10px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.info_base>div>.info_info {
+    width: 65px;
+}
+.info_base>div > span {
+    width: 25px;
+    text-align: left;
+}
