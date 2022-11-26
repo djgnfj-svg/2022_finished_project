@@ -9,7 +9,7 @@ function Running({ check }) {
         if (checkedInputs !== null && checkedPlay !== null) {
             check(checkedInputs, checkedPlay)
         }
-    }, [checkedInputs || checkedPlay])
+    }, [checkedInputs , checkedPlay])
 
     const playing = [
         {
