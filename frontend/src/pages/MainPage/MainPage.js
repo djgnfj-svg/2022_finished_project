@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from './Hero/Hero'
+import KcalInfo from './KcalInfo/KcalInfo'
 import './MainPage.css'
 import UserInfo from './UserInfo/UserInfo'
 
@@ -11,6 +12,9 @@ function MainPage() {
         </div>
         <div className='user_Content'>
             <UserInfo />
+        </div>
+        <div className='user_Content'>
+            <KcalInfo />
         </div>
     </div>
   )

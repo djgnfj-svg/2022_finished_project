@@ -1,0 +1,51 @@
+.sicksa_Card{
+    width: 455px;
+    height: 270px;
+    border: 1px solid rgb(103, 103, 103);
+    margin: 0 auto;
+    margin-top: 100px;
+    padding-left:1.5rem;
+    padding-top: 2rem;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+.card{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    font-size:22px
+}
+.card > span{ 
+    height: max-content;
+}
+.card > h2{
+    margin: 5px;
+    margin-left: 10px;
+}
+.card_sub{
+    font-size: 19px;
+    color: rgb(104, 104, 104);
+    text-align: left;
+    padding-left: 3.3rem;
+    margin-top: 5px;
+}
+.card_kcal{
+    display: flex;
+    flex-direction: row;
+    margin-left:25px;
+}
+.card_kcal > div{
+    position: relative;
+    margin-top: 80px;
+    bottom: 0px;
+    margin-right: 40px;
+}
+.card_kcal > div > div{
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: right;
+}
+.card_kcal > div > h2{
+    font-size: 20px;
+
+}

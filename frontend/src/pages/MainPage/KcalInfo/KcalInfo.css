@@ -1,0 +1,6 @@
+.Kcal_Info{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    margin: 0 auto;
+}
