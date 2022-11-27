@@ -26,9 +26,7 @@ function Sicksa() {
                 <div>
                     <div>총 칼로리</div>
                     <h2>900kcal</h2>
-
                 </div>
-
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ import './Infobase.css'
 import axios from 'axios'
 import { inputUrl } from '../../../../../apiUrl/ApiUrl'
 
-function Infobase() {
+function Infobase({submit}) {
     const [userInput, setUserInput] = useState({
         age: "", // 나이
         height: "",  // 키
@@ -48,10 +48,11 @@ function Infobase() {
     const handleSubmitInfo = () => {
         axios.post(inputUrl , userInput)
             .then(res => {
-                console.log(res)
+                submit(res.data)
+                console.log(res.data)
+            }).catch(error => {
+                console.log(error)
             })
-            
-        console.log(userInput)
     }
 
     return (
