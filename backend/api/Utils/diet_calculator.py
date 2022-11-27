@@ -46,9 +46,9 @@ class Calculation():
 
     def total_carbohydrate(self,instance):
         #나머지는 모두 탄수화물로 가야함
-        total_kilo_calorie = instance["total_kilo_calorie"]
-        total_protein = instance["total_protein"]
-        total_fat = instance["total_fat"]
+        total_kilo_calorie = instance["total_data"]["total_kilo_calorie"]
+        total_protein = instance["total_data"]["total_protein"]
+        total_fat = instance["total_data"]["total_fat"]
     
         total_carbohydrate = (total_kilo_calorie - ((total_protein * 4) + (total_fat * 9)))
 

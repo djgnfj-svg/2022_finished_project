@@ -15,21 +15,22 @@ class Input_SZ(serializers.Serializer):
     
     def create(self, request, validated_data):
         instance = {}
+        print(validated_data)
         meals = validated_data["many_meals"]
         cal = Calculation()
         instance["total_data"] = {}
         instance["total_data"]["total_kilo_calorie"] = cal.total_kilo_calorie(validated_data)
         instance["total_data"]["total_protein"] = cal.total_protein(validated_data)
-        instance["total_data"]["total_fat"] =  cal.total_fat(instance["total_kilo_calorie"])
+        instance["total_data"]["total_fat"] =  cal.total_fat(instance["total_data"]["total_kilo_calorie"])
         instance["total_data"]["total_carbohydrate"] = cal.total_carbohydrate(instance)
 
-        instance["meals"]
+        instance["meals"] = {}
         for i in range(1, meals + 1) :
             instance["meals"][str(i) + "_meals"] = {}
-            instance["meals"][str(i) + "_meals"]["kilo_calorie"] = instance["total_kilo_calorie"] / meals
-            instance["meals"][str(i) + "_meals"]["protein"] = instance["total_protein"]/ meals
-            instance["meals"][str(i) + "_meals"]["fat"] = instance["total_fat"] / meals
-            instance["meals"][str(i) + "_meals"]["carbohydrate"] = instance["total_carbohydrate"] / meals
+            instance["meals"][str(i) + "_meals"]["kilo_calorie"] = instance["total_data"]["total_kilo_calorie"] / meals
+            instance["meals"][str(i) + "_meals"]["protein"] = instance["total_data"]["total_protein"]/ meals
+            instance["meals"][str(i) + "_meals"]["fat"] = instance["total_data"]["total_fat"] / meals
+            instance["meals"][str(i) + "_meals"]["carbohydrate"] = instance["total_data"]["total_carbohydrate"] / meals
         return instance
 
     # def validate_gender(self, value):
