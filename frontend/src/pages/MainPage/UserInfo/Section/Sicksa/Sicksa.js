@@ -27,7 +27,7 @@ function Sicksa({ check }) {
   return (
     <div>
       <div>
-        <h2 style={{marginBottom:"0px"}}>일일 식사 횟수</h2>
+        <h2 style={{marginBottom:"0px"}}>식사 횟수</h2>
         <div style={{display:"flex" , flexDirection:"row" , width:"100px" , margin:"0 auto"}}> 
           {many_meals.map((item) => (
             <p style={{ fontSize: "18px" }}>
