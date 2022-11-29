@@ -25,12 +25,16 @@ class Input_SZ(serializers.Serializer):
         instance["total_data"]["total_carbohydrate"] = cal.total_carbohydrate(instance)
 
         instance["meals"] = {}
+        if meals == 2:
+            meals_ratio = [0.6, 0.4]
+        else :
+            meals_ratio = [0.25, 0.45, 0.3]
         for i in range(1, meals + 1) :
             instance["meals"][str(i) + "_meals"] = {}
-            instance["meals"][str(i) + "_meals"]["kilo_calorie"] = instance["total_data"]["total_kilo_calorie"] / meals
-            instance["meals"][str(i) + "_meals"]["protein"] = instance["total_data"]["total_protein"]/ meals
-            instance["meals"][str(i) + "_meals"]["fat"] = instance["total_data"]["total_fat"] / meals
-            instance["meals"][str(i) + "_meals"]["carbohydrate"] = instance["total_data"]["total_carbohydrate"] / meals
+            instance["meals"][str(i) + "_meals"]["kilo_calorie"] = round(instance["total_data"]["total_kilo_calorie"] * meals_ratio[i-1])
+            instance["meals"][str(i) + "_meals"]["protein"] = round(instance["total_data"]["total_protein"] * meals_ratio[i-1])
+            instance["meals"][str(i) + "_meals"]["fat"] = round(instance["total_data"]["total_fat"] * meals_ratio[i-1])
+            instance["meals"][str(i) + "_meals"]["carbohydrate"] = round(instance["total_data"]["total_carbohydrate"] * meals_ratio[i-1])
         return instance
 
     # def validate_gender(self, value):
