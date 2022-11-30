@@ -8,7 +8,7 @@ function Sicksa({ i, meals}) {
                 <span style={{ fontSize: "38px" }}>☃️</span>
                 <h2>{i+1}&nbsp; Sicksa</h2>
             </div>
-            <div className='card_sub'>오전 11~2시 식사를 추천해요 !</div>
+            <div className='card_sub'></div>
             <div className='card_kcal'>
                 <div>
                     <div>단백질</div>

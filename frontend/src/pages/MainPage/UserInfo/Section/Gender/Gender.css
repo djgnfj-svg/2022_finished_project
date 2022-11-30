@@ -1,15 +1,19 @@
 .info_Gender{
-    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 .select_Gender button{
     width: 75px;
-    height: 25px;
+    height: 28px;
     border: none;
+    margin-right: 10px;
+    border-radius: 20px;
 }
 .select_Gender{
     border: 1px solid none;
     width: max-content;
     margin: 0 auto;
+    padding-left: 1.3rem;
 }
 .selected_Gender{
     background-color: skyblue;

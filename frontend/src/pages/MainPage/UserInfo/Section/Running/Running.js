@@ -9,7 +9,7 @@ function Running({ check }) {
         if (checkedInputs !== null && checkedPlay !== null) {
             check(checkedInputs, checkedPlay)
         }
-    }, [checkedInputs , checkedPlay])
+    }, [checkedInputs, checkedPlay])
 
     const playing = [
         {
@@ -27,17 +27,17 @@ function Running({ check }) {
     ]
     const play = [
         {
-            name: '주 0회',
+            name: '0회',
             value: 0
         }, {
-            name: '주 1~3회',
+            name: '1~3회',
             value: 0.1
         }, {
-            name: '주 4~6회',
+            name: '4~6회',
             value: 0.2
         }
         , {
-            name: '주 7회 이상',
+            name: '7회 이상',
             value: 0.3
         }
     ]
@@ -60,27 +60,27 @@ function Running({ check }) {
     return (
         <div className='info_Running'>
             <div>
-                <h2>활동량</h2>
-                <div>
-                    <div>활동량</div>
+                <h2 style={{marginBottom:"5px"}}>활동량</h2>
+                <div style={{fontSize:"15px" , fontWeight:"500", color:"gray" , marginBottom:"10px"}}>(하루 평균)</div>
+                <div className='Running_Checklist'>
                     {playing.map((item) => (
                         <p>
                             <input type='checkbox' name='playing' value={item.value}
                                 onChange={(e) => handleChangeCheck(e.currentTarget.checked, item.value)} checked={checkedInputs === item.value ? true : false} />
-                            {item.name}
+                            <span>{item.name}</span>
                         </p>
                     ))}
                 </div>
             </div>
             <div>
-                <h2>운동량</h2>
-                <div>
-                    <div>운동량</div>
+                <h2 style={{marginBottom:"5px"}}>운동량</h2>
+                <div style={{fontSize:"15px" , fontWeight:"500", color:"gray" , marginBottom:"10px"}}>(1주일 기준)</div>
+                <div className='Running_Checklist'>
                     {play.map((item) => (
                         <p>
                             <input type='checkbox' name='playing' value={item.value}
                                 onChange={(e) => handleChangeplay(e.currentTarget.checked, item.value)} checked={checkedPlay === item.value ? true : false} />
-                            {item.name}
+                            <span>{item.name}</span>
                         </p>
                     ))}
                 </div>
