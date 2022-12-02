@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
+}
+input:focus{
+  outline: none;
 }
 
 .App-logo {

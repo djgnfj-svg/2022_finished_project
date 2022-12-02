@@ -14,5 +14,39 @@
     width: max-content;
 }
 .Running_Checklist > p{
-    width: 80px;
+    width: max-content;
+    margin-right: 15px;
+}
+.Running_Checklist form  .circle , .day_sicksa form .circle{
+    display: inline-block;
+    width:20px; height: 20px;
+    border:2px solid #333;
+    box-sizing: border-box;
+    position: relative; top: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.Running_Checklist form .circle:after , .day_sicksa form .circle:after{
+    content: '\2714';
+    font-size: 22px;
+    color: rgb(248, 77, 77);
+    position: absolute;
+    top: -8px;
+    left: 0px;
+    opacity: 0;
+    transition: 0.5s;
+}
+#play0:checked + .circle:after , #play1:checked + .circle:after , #play2:checked + .circle:after , #play3:checked + .circle:after {
+    opacity: 1;
+}
+#playing0:checked + .circle:after , #playing1:checked + .circle:after , #playing2:checked + .circle:after , #playing3:checked + .circle:after {
+    opacity: 1;
+}
+#sicksa0:checked + .circle:after , #sicksa1:checked + .circle:after{
+    opacity: 1;
+}
+#playing0 , #playing1 , #playing2 , #playing3 , #play0 , #play1 , #play2 , #play3 , #sicksa0 , #sicksa1{
+    position: absolute;
+    left: -999em;
 }

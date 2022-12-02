@@ -6,7 +6,7 @@ import './Infobase.css'
 import axios from 'axios'
 import { inputUrl } from '../../../../../apiUrl/ApiUrl'
 
-function Infobase({submit}) {
+function Infobase({ submit }) {
     const [userInput, setUserInput] = useState({
         age: "", // 나이
         height: "",  // 키
@@ -46,7 +46,7 @@ function Infobase({submit}) {
         })
     }
     const handleSubmitInfo = () => {
-        axios.post(inputUrl , userInput)
+        axios.post(inputUrl, userInput)
             .then(res => {
                 submit(res.data)
                 console.log(res.data)
@@ -58,10 +58,15 @@ function Infobase({submit}) {
     return (
         <>
             <div className='info_base'>
-                <div>
-                    <div className="info_info">나이 (만)</div>
-                    <input name='age' onChange={handleChangeInput} value={age} />
-                    <span>세</span>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <div>
+                        <h2 style={{ textAlign: "left" }}>인적사항</h2>
+                    </div>
+                    <div className='injucsahang' style={{ display: "flex", flexDirection: "row" }}>
+                        <div className="info_info">나이 (만)</div>
+                        <input name='age' onChange={handleChangeInput} value={age} />
+                        <span>세</span>
+                    </div>
                 </div>
                 <div>
                     <div className="info_info">신장 (키)</div>
@@ -84,7 +89,7 @@ function Infobase({submit}) {
                 </div>
             </div>
             <div className='info_Submit'>
-                <button onClick={() => handleSubmitInfo() }>확인하기</button>
+                <button onClick={() => handleSubmitInfo()}>확인하기</button>
             </div>
         </>
     )

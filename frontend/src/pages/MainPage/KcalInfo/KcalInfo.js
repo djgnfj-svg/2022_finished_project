@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './KcalInfo.css'
 import Sicksa from './Section/Sicksa/Sicksa'
+import TotalData from './Section/TotalData/TotalData'
 
 function KcalInfo({ info }) {
 
-  const [kcalInfo, setKcalInfo] = useState('as')
-
-  useEffect(() => {
-    if (info !== 'as') {
-      setKcalInfo(info.meals)
-    }
-  }, [info])
+  const [totalKcal , setTotalKcal] = useState(info.total_data);
 
   const rendering = () => {
     const result = []
@@ -29,7 +24,8 @@ function KcalInfo({ info }) {
          */}
         {rendering()}
       </div>
-      <div>
+      <div className='total_data'>
+         <TotalData total={totalKcal} />
       </div>
     </div>
   )

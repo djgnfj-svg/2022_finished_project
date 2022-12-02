@@ -1,0 +1,23 @@
+.totla_KcalData{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.totla_KcalData > div{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.totla_KcalData > div > .total_title{
+    width: 250px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+.totla_KcalData > div > .total_grams{
+    font-size: 22px;
+    text-align: right;
+    width: 100px;
+}

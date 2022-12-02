@@ -4,3 +4,12 @@
     width: max-content;
     margin: 0 auto;
 }
+.total_data{
+    width: 900px;
+    height: 450px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

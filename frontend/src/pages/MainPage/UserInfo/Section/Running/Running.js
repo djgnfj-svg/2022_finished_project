@@ -60,27 +60,36 @@ function Running({ check }) {
     return (
         <div className='info_Running'>
             <div>
-                <h2 style={{marginBottom:"5px"}}>활동량</h2>
-                <div style={{fontSize:"15px" , fontWeight:"500", color:"gray" , marginBottom:"10px"}}>(하루 평균)</div>
+                <h2 style={{ marginBottom: "5px" }}>활동량</h2>
                 <div className='Running_Checklist'>
-                    {playing.map((item) => (
+                    {playing.map((item , index) => (
                         <p>
-                            <input type='checkbox' name='playing' value={item.value}
-                                onChange={(e) => handleChangeCheck(e.currentTarget.checked, item.value)} checked={checkedInputs === item.value ? true : false} />
-                            <span>{item.name}</span>
+                            <form action='#'>
+                            <label for={`playing${index}`}>
+                                <input type='checkbox' name='playing' id={`playing${index}`} value={item.value}
+                                    onChange={(e) => handleChangeCheck(e.currentTarget.checked, item.value)} checked={checkedInputs === item.value ? true : false} />
+                                <i className='circle'></i>
+                                <span>{item.name}</span>
+                                    </label>
+                            </form>
                         </p>
                     ))}
                 </div>
             </div>
             <div>
-                <h2 style={{marginBottom:"5px"}}>운동량</h2>
-                <div style={{fontSize:"15px" , fontWeight:"500", color:"gray" , marginBottom:"10px"}}>(1주일 기준)</div>
+                <h2 style={{ marginBottom: "5px" }}>운동량</h2>
+                <div style={{ fontSize: "15px", fontWeight: "500", color: "gray", marginBottom: "10px" }}>(1주일 기준)</div>
                 <div className='Running_Checklist'>
-                    {play.map((item) => (
+                    {play.map((item,index) => (
                         <p>
-                            <input type='checkbox' name='playing' value={item.value}
-                                onChange={(e) => handleChangeplay(e.currentTarget.checked, item.value)} checked={checkedPlay === item.value ? true : false} />
-                            <span>{item.name}</span>
+                            <form action='#'>
+                                <label for={`play${index}`}>
+                                    <input type='checkbox' name='playing' id={`play${index}`} value={item.value}
+                                        onChange={(e) => handleChangeplay(e.currentTarget.checked, item.value)} checked={checkedPlay === item.value ? true : false} />
+                                    <i className='circle'></i>
+                                    <span>{item.name}</span>
+                                </label>
+                            </form>
                         </p>
                     ))}
                 </div>

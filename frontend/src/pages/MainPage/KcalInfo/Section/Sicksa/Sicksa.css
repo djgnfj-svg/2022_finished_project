@@ -32,7 +32,6 @@
 .card_kcal{
     display: flex;
     flex-direction: row;
-    margin-left:25px;
 }
 .card_kcal > div{
     position: relative;
@@ -41,11 +40,12 @@
     margin-right: 40px;
 }
 .card_kcal > div > div{
-    margin-bottom: 20px;
-    font-size: 20px;
-    text-align: right;
+    margin-bottom: 15px;
+    font-size: 22px;
+    text-align: center;
+    width: 60px;
 }
 .card_kcal > div > h2{
     font-size: 20px;
-
+    text-align: right;
 }

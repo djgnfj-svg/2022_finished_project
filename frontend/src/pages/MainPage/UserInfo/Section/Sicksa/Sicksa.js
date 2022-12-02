@@ -27,18 +27,22 @@ function Sicksa({ check }) {
   return (
     <div>
       <div>
-        <h2 style={{marginBottom:"0px"}}>식사 횟수</h2>
-        <div style={{display:"flex" , flexDirection:"row" , width:"100px" , margin:"0 auto"}}> 
-          {many_meals.map((item) => (
-            <p style={{ fontSize: "18px" }}>
-              <input type='checkbox' name='playing' value={item.value}
-                onChange={(e) => handleChangeCheck(e.currentTarget.checked, item.value)} checked={checkedInputs === item.value ? true : false} />
-              {item.name}
+        <h2 style={{ marginBottom: "0px" }}>식사 횟수</h2>
+        <div className='day_sicksa' style={{ display: "flex", flexDirection: "row", width: "150px", margin: "0 auto" }}>
+          {many_meals.map((item, index) => (
+            <p style={{ fontSize: "18px", marginRight: "10px", width: "200px" }}>
+              <form>
+                <label for={`sicksa${index}`}>
+                  <input type='checkbox' name='playing' id={`sicksa${index}`} value={item.value}
+                    onChange={(e) => handleChangeCheck(e.currentTarget.checked, item.value)} checked={checkedInputs === item.value ? true : false} />
+                  <i className='circle'></i>
+                  {item.name}
+                </label>
+              </form>
             </p>
           ))}
         </div>
       </div>
-      <div style={{ color: "rgb(100,100,100)" }}>저희 간식단단에서는 일일 2회이상 식사를 권장드립니다 : )</div>
     </div>
   )
 }

@@ -12,20 +12,20 @@ function Sicksa({ i, meals}) {
             <div className='card_kcal'>
                 <div>
                     <div>단백질</div>
-                    <h2>{meals.protein}g</h2>
+                    <h2 style={{width:"55px"}}>{meals.protein}g</h2>
                 </div>
                 <div>
-                    <div>탄수화물</div>
-                    <h2>{meals.carbohydrate}g</h2>
+                    <div style={{width:"90px"}}>탄수화물</div>
+                    <h2 style={{width:"75px"}}>{meals.carbohydrate}g</h2>
                 </div>
                 <div>
                     <div>지방</div>
-                    <h2>{meals.fat}g</h2>
+                    <h2 style={{width:"50px"}}>{meals.fat}g</h2>
 
                 </div>
                 <div>
-                    <div>총 칼로리</div>
-                    <h2>{meals.kilo_calorie}kcal</h2>
+                    <div style={{width:"90px"}}>총 칼로리</div>
+                    <h2 style={{width:"83px"}}>{meals.kilo_calorie}kcal</h2>
                 </div>
             </div>
         </div>

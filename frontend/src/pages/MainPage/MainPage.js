@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import HeroContent from '../HeroContent/HeroContent'
 import Hero from './Hero/Hero'
 import KcalInfo from './KcalInfo/KcalInfo'
 import './MainPage.css'
@@ -28,19 +29,22 @@ function MainPage() {
 
 
   return (
-    <div>
-      <div className='hero_Content'>
-      </div>
+    <div style={{minWidth:"1500px", paddingLeft:"10vw" , margin:"0 auto"}}>
       {booleanCheck ? (
         <>
           <div className='user_Content'>
             <KcalInfo info={userInfo} />
           </div>
-          <button onClick={() => handleBackInput()}>뒤로가기</button>
+          <button className='backInput_Btn' onClick={() => handleBackInput()}>뒤로가기</button>
         </>
       ) :
-        <div className='user_Content'>
-          <UserInfo submit={handleSubmitInfo} />
+        <div style={{display:"flex" , flexDirection:"row"}}>
+          <div className='hero_Content' style={{width:"50%" , minWidth:"800px"}}>
+            <HeroContent />
+          </div>
+          <div className='user_Content'>
+            <UserInfo submit={handleSubmitInfo} />
+          </div>
         </div>
       }
     </div>

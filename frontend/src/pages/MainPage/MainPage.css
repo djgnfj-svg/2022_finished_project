@@ -1,4 +1,16 @@
 .user_Content{
-    margin: 0 auto;
     min-width: 500px;
+}
+.backInput_Btn{
+    width: 70px;
+    height: 30px;
+    border: 1.5px solid rgb(36, 161, 210);
+    background-color: white;
+    border-radius: 5px;
+}
+.hero_Content{
+    margin-top: 100px;
+    background-image: url('../../img/diet-Hero.png') ;
+    background-size: cover;
+    object-fit: cover;
 }

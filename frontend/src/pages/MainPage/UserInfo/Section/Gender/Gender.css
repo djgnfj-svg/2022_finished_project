@@ -1,6 +1,10 @@
 .info_Gender{
     margin: 0 auto;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    align-items: center;
 }
 .select_Gender button{
     width: 75px;

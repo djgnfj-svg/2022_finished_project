@@ -11,20 +11,33 @@
     width: max-content;
     margin-bottom: 10px;
 }
+.info_base .holy{
+    
+}
 
-.info_base > div > input {
+.info_base > div > input , .info_base .injucsahang > input {
     margin-right: 5px;
     margin-left: 10px;
     text-align: right;
     padding-right: 5px;
     border-radius: 5px;
-    border: 1px solid gray;
+    border: none;
+    border-bottom: 2px solid skyblue;
+    background-color: #ebf0f3;
 }
 
-.info_base>div>.info_info {
+.info_base>div>.info_info , .info_base .injucsahang .info_info {
     width: 65px;
 }
-.info_base>div > span {
+.info_base>div > span , .info_base .injucsahang span {
     width: 25px;
     text-align: left;
+}
+.info_Submit button{
+    width: 70px;
+    height: 30px;
+    border: 3px solid skyblue;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 20px;
 }
