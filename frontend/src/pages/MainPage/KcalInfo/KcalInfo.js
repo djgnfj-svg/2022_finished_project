@@ -17,11 +17,7 @@ function KcalInfo({ info }) {
 
   return (
     <div>
-      <div className='Kcal_Info'>
-        {/** 
-         * 1. meals 만큼 map으로 식사 카드 생성
-         * 2. 식사카드에 meals.{index+1}meals 전송
-         */}
+      <div className='Kcal_Info' style={Object.keys(info.meals).length === 2 ? {} : {marginLeft:"-70px"}}>
         {rendering()}
       </div>
       <div className='total_data'>

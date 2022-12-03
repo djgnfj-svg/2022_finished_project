@@ -21,7 +21,7 @@ function Gender({check}) {
       <div style={{fontSize:"20px" , fontWeight:"bold"}}>성별</div>
       <div className='select_Gender'>
         <button className={isMan && 'selected_Gender'} onClick={() => handleClickMan()}>남성</button>
-        <button className={!isMan && 'selected_Gender'} onClick={() => handleClickWoman()}>여성</button>
+        <button className={!isMan && 'selected_GenderW'} onClick={() => handleClickWoman()}>여성</button>
       </div>
     </div>
   )
