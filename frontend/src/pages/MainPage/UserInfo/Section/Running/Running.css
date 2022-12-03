@@ -21,7 +21,7 @@
 }
 .Running_Checklist form  .circle , .day_sicksa form .circle{
     display: inline-block;
-    width:20px; height: 20px;
+    width:15px; height: 15px;
     border:2px solid #333;
     box-sizing: border-box;
     position: relative; top: 4px;
@@ -29,10 +29,14 @@
     border-radius: 10px;
     margin-right: 5px;
 }
+.Running_Checklist span{
+    font-size: 14px;
+}
 .Running_Checklist form .circle:after , .day_sicksa form .circle:after{
     content: '\2714';
-    font-size: 22px;
+    font-size: 20px;
     color: rgb(248, 77, 77);
+    font-weight: bold;
     position: absolute;
     top: -8px;
     left: 0px;

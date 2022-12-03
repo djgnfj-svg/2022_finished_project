@@ -4,7 +4,7 @@ import './TotalData.css'
 function TotalData({total}) {
   return (
     <>
-      <h1>1 Day Total Kcalory</h1>
+      <h2>1 Day Total Kcalory</h2>
       <div className='totla_KcalData'>
         <div>
           <div className='total_title'>단백질</div>

@@ -60,7 +60,7 @@ function Running({ check }) {
     return (
         <div className='info_Running'>
             <div>
-                <h2 style={{ marginBottom: "5px" }}>활동량</h2>
+                <h3 style={{ marginBottom: "5px" }}>활동량</h3>
                 <div className='Running_Checklist'>
                     {playing.map((item , index) => (
                         <p>
@@ -77,8 +77,8 @@ function Running({ check }) {
                 </div>
             </div>
             <div>
-                <h2 style={{ marginBottom: "5px" }}>운동량</h2>
-                <div style={{ fontSize: "15px", fontWeight: "500", color: "gray", marginBottom: "10px" }}>(1주일 기준)</div>
+                <h3 style={{ marginBottom: "5px" }}>운동량</h3>
+                <div style={{ fontSize: "14px", fontWeight: "500", color: "gray", marginBottom: "10px" }}>(1주일 기준)</div>
                 <div className='Running_Checklist'>
                     {play.map((item,index) => (
                         <p>

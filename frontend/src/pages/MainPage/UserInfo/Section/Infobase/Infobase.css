@@ -10,9 +10,6 @@
     width: max-content;
     margin-bottom: 10px;
 }
-.info_base .holy{
-    
-}
 
 .info_base > div > input , .info_base .injucsahang > input {
     margin-right: 5px;
@@ -27,10 +24,12 @@
 
 .info_base>div>.info_info , .info_base .injucsahang .info_info {
     width: 65px;
+    font-size: 14px;
 }
 .info_base>div > span , .info_base .injucsahang span {
     width: 25px;
     text-align: left;
+    font-size: 14px;
 }
 .info_Submit button{
     width: 100px;

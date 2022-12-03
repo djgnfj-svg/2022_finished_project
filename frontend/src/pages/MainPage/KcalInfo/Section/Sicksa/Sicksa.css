@@ -1,13 +1,13 @@
 .sicksa_Card{
-    width: 480px;
-    height: 270px;
+    width: 400px;
+    height: 240px;
     border: 1px solid rgb(103, 103, 103);
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 30px;
     padding-left:1.5rem;
     padding-top: 2rem;
     border-radius: 10px;
-    margin-right: 40px;
+    margin-left: 20px;
 }
 .card{
     text-align: left;
@@ -22,13 +22,6 @@
     margin: 5px;
     margin-left: 10px;
 }
-.card_sub{
-    font-size: 19px;
-    color: rgb(104, 104, 104);
-    text-align: left;
-    padding-left: 3.3rem;
-    margin-top: 5px;
-}
 .card_kcal{
     display: flex;
     flex-direction: row;
@@ -38,14 +31,16 @@
     margin-top: 100px;
     bottom: 0px;
     margin-right: 40px;
+    width: 25%;
+    padding-left: 0px !important;
 }
 .card_kcal > div > div{
     margin-bottom: 15px;
-    font-size: 22px;
+    font-size: 15px;
     text-align: center;
     width: 60px;
 }
 .card_kcal > div > h2{
-    font-size: 20px;
+    font-size: 17px;
     text-align: right;
 }

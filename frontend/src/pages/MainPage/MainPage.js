@@ -29,17 +29,17 @@ function MainPage() {
 
 
   return (
-    <div style={{minWidth:"1500px", margin:"0 auto"}}>
+    <div style={{marginTop:"50px"}}>
       {booleanCheck ? (
-        <div style={{position:"relative" , top:"-140px"}}>
+        <div style={{position:"relative"}}>
           <div className='user_Content'>
             <KcalInfo info={userInfo} />
           </div>
           <button className='backInput_Btn' onClick={() => handleBackInput()}>뒤로가기</button>
         </div>
       ) :
-        <div style={{display:"flex" , flexDirection:"row"}}>
-          <div className='hero_Content' style={{width:"60%" , minWidth:"800px"}}>
+        <div style={{display:"flex" , flexDirection:"row" , paddingLeft:"7rem" , width:"100%"}}>
+          <div className='hero_Content' style={{width:"60%" , minWidth:"0"}}>
             <HeroContent />
           </div>
           <div className='user_Content'>

@@ -17,7 +17,7 @@ function KcalInfo({ info }) {
 
   return (
     <div>
-      <div className='Kcal_Info' style={Object.keys(info.meals).length === 2 ? {} : {marginLeft:"-70px"}}>
+      <div className='Kcal_Info' style={Object.keys(info.meals).length === 2 ? {} : {}}>
         {rendering()}
       </div>
       <div className='total_data'>
