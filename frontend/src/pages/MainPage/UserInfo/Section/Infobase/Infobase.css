@@ -22,6 +22,7 @@
     border: none;
     border-bottom: 2px solid skyblue;
     background-color: #ebf0f3;
+    width: 60px;
 }
 
 .info_base>div>.info_info , .info_base .injucsahang .info_info {

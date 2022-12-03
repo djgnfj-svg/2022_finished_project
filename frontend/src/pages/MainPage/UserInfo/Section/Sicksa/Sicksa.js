@@ -26,9 +26,9 @@ function Sicksa({ check }) {
 
   return (
     <div>
-      <div>
+      <div style={{display:"flex" , flexDirection:"column"}}>
         <h2 style={{ marginBottom: "0px" }}>식사 횟수</h2>
-        <div className='day_sicksa' style={{ display: "flex", flexDirection: "row", width: "150px", margin: "0 auto" }}>
+        <div className='day_sicksa' style={{ display: "flex", flexDirection: "row !important", width: "150px", margin: "0 auto" }}>
           {many_meals.map((item, index) => (
             <p style={{ fontSize: "18px", marginRight: "10px", width: "200px" }}>
               <form>

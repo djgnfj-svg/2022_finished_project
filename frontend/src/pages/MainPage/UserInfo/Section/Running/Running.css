@@ -1,12 +1,14 @@
 .info_Running{
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     margin: 0 auto;
     width: 100%;
 }
 .info_Running > div{
     width: max-content;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column !important;
 }
 .Running_Checklist{
     display: flex;

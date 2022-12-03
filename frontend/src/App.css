@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   font-family: sans-serif;
-  transform: scale(0.8);
+  transform: scale(0.85);
 }
 input:focus{
   outline: none;
