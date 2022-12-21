@@ -1,0 +1,30 @@
+.info_Gender{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+}
+.select_Gender button{
+    width: 75px;
+    height: 28px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 20px;
+    margin-top: 15px;
+    background-color: rgb(200, 200, 200);
+}
+.select_Gender{
+    border: 1px solid none;
+    width: max-content;
+    margin: 0 auto;
+    padding-left: 1.3rem;
+    font-size: 13px;
+}
+.selected_Gender{
+    background-color: skyblue !important;
+}
+.selected_GenderW{
+    background-color: pink !important;
+}

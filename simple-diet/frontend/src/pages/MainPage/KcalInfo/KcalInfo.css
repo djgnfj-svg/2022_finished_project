@@ -1,0 +1,15 @@
+.Kcal_Info{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    margin: 0 auto;
+}
+.total_data{
+    width: 700px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

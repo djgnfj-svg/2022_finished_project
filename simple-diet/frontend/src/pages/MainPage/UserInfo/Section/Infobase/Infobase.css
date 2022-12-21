@@ -1,0 +1,42 @@
+.info_base {
+    text-align: right;
+}
+
+.info_base > div {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: max-content;
+    margin-bottom: 10px;
+}
+
+.info_base > div > input , .info_base .injucsahang > input {
+    margin-right: 5px;
+    margin-left: 10px;
+    text-align: right;
+    padding-right: 5px;
+    border: none;
+    border-bottom: 2px solid skyblue;
+    background-color: #ebf0f3;
+    width: 60px;
+}
+
+.info_base>div>.info_info , .info_base .injucsahang .info_info {
+    width: 65px;
+    font-size: 14px;
+}
+.info_base>div > span , .info_base .injucsahang span {
+    width: 25px;
+    text-align: left;
+    font-size: 14px;
+}
+.info_Submit button{
+    width: 100px;
+    height: 30px;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+    background-color: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
