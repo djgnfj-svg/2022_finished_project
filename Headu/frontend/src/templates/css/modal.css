@@ -1,0 +1,119 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .modal button {
+    outline: none;
+    cursor: pointer;
+    border: 0;
+  }
+  .modal  section {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    /* 팝업이 열릴때 스르륵 열리는 효과 */
+    animation: modal-show 0.3s;
+    overflow: hidden;
+  }
+  .modal  section  header {
+    position: relative;
+    padding: 16px 10px 16px 10px;
+    background-color: #31313c;
+    font-weight: 700;
+    text-align: left;
+    color: white;
+  }
+  .modal  section  header button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    font-size: 21px;
+    font-weight: 700;
+    text-align: center;
+    color: #999;
+    background-color: transparent;
+  }
+  .modal  section  main {
+    padding: 10px 10px 10px 10px;
+    border-top: 1px solid rgb(63, 63, 247);
+    background-color: #31313c;
+    text-align: left;
+    height: 260px;
+    color: #7b7a8b;
+    font-size: 13px;
+  }
+  
+  .modal section main input ,textarea,.select_mode{
+    float: left;
+    border-radius: .3rem;
+    background-color: #31313c;
+    margin-bottom: 10px;
+    color: white;
+    border: 1px #4c4c5d solid;
+    padding: 2px 10px 2px 10px;
+    margin-top: 5px;
+    resize: none;
+  }
+  ::placeholder{
+    color: #6d6d85;
+  }
+  .userName,.removePasword{
+    width: 450px;
+    height: 30px;
+  }
+
+  .memo ,.select_mode{
+    width: 213px;
+    height: 80px;
+    padding-top: 10px;
+    outline: none;
+    margin-right: 5px;
+  }
+
+  .modal  section  footer {
+    padding: 12px 16px;
+    text-align: center;
+    background-color: #31313c;
+  }
+  .modal  section  footer button {
+    padding: 15px 90px;
+    color: white;
+    background-color: #31313c;
+    border: 1px #6d6d85 solid;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+  .modal.openModal {
+    display: flex;
+    align-items: center;
+    /* 팝업이 열릴때 스르륵 열리는 효과 */
+    animation: modal-bg-show 0.3s;
+  }
+  @keyframes modal-show {
+    from {
+      opacity: 0;
+      margin-top: -50px;
+    }
+    to {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+  @keyframes modal-bg-show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

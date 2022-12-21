@@ -1,0 +1,123 @@
+
+.mainDuo{
+    display: inline-block;
+    text-align: center;
+    width: 900px;
+    margin-top: 150px;
+}
+
+.addUser{
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    text-align: right;
+}
+.addUser button{
+    padding: 10px 20px 10px 20px;
+    font-size: 13px;
+    background-color: #00c0a4;
+    border: none;
+    border-radius: .3rem;
+    color: white;
+}
+
+
+.Duo_topbar{
+    position: relative;
+    width: 900px;
+    height: 27.5px;
+    color: #7b7a8b;
+    background-color: #282830;
+    font-size: small;
+    padding-top: 5px;
+    padding-bottom: 2.5px;
+    border-top-left-radius:0.3rem ;
+    border-top-right-radius: 0.3rem;
+}
+.Duo_topbar div{
+    padding : 0px 10px 0px 10px;
+    float: left;
+    width: 100px;
+}
+
+.Duo_userInfo{
+    position: relative;
+    width: 900px;
+    padding:2px 0px 2px 0px;
+    background-color: #31313c;
+    text-align: center;
+    margin-bottom: 0;
+    border-bottom: black 1.5px solid;
+    margin-left: 0px;
+}
+ul{
+    padding : 0 0 0 0;
+    margin : 0 0 0 0;
+}
+.contain2{
+    display: inline-block;
+    text-align: center;    
+}
+
+
+
+.Duo_userInfo div{
+    width: 100px;
+    font-size: 15px;
+    font-weight: 100;
+    padding : 20px 10px 20px 10px;
+    color:white;
+    float: left;
+
+}
+/* 메뉴별 개인 박스 크기 정하기 */
+
+.Duo_topbar .Name{
+    text-align: left;
+}
+.Name {
+    text-align: left;
+}
+
+.Duo_topbar div{
+    width: 100px;
+}
+
+.menu_option{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:2vw;
+    left: 0vw;
+    background-color: pink;
+}
+
+.menu_option div{
+    width: 100px;
+    height: 30px;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+}
+
+
+
+
+/* @keyframes slidein {
+    from {
+      left:12.5vw
+    }
+  
+    to {
+     left:0vw;
+   }
+}
+
+@media (max-width: 700px)
+{
+   .Duo_topbar,.Duo_userInfo{
+       animation-duration: 0.1s;
+       animation-name: slidein;
+       animation-iteration-count: 1;
+       left: 0vw;
+   }
+} */
